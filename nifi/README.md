@@ -12,8 +12,6 @@ Originally sourced from Kaggle, this dataset contains some student demographic d
 
 ## Flow Design
 
-Describe the important processors used in the final NiFi flow and the role each processor performs.
-
 | Processor / Process Group | Role in the Flow |
 |---|---|
 | Download File | Accesses the Github link and downloads the csv file. |
@@ -26,7 +24,7 @@ Describe the important processors used in the final NiFi flow and the role each 
 
 **HDFS path:** `/studentData`
 
-Explain where NiFi writes the dataset and how the destination is used by the next stage of the pipeline.
+The NiFi flow saved the data as a csv file in the HDFS file system. Later in this project, Hive, HBase, and Spark will be able to access the data saved in that directory.
 
 ## Execution Evidence
 
