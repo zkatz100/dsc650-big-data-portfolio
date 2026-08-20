@@ -24,7 +24,7 @@ Describe the important processors used in the final NiFi flow and the role each 
 
 ## HDFS Destination
 
-**HDFS path:** `[Enter final HDFS path]`
+**HDFS path:** `/studentData`
 
 Explain where NiFi writes the dataset and how the destination is used by the next stage of the pipeline.
 
