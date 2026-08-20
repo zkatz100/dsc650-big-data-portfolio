@@ -17,13 +17,13 @@ I created this table called performance with the column names the same as the or
 
 ## Data Load Verification
 
-Explain how you confirmed that the data was successfully loaded into the managed Hive table.
+I viewed the first 10 rows of the Hive table in order to confirm that the data loaded properly into the table.
 
 ![Hive Load Results](screenshots/hive-load-results.png)
 
 ## Query & Aggregation Verification
 
-Describe the representative queries used to validate the populated table. Include at least one aggregation query and explain what the results demonstrate about the dataset and schema.
+I used an aggregation COUNT query to count the number of rows of the table where the overall final_grade was an f. Because Hive was able to identify those rows, it also confirms that the schema was set up correctly.
 
 ![Hive Query Results](screenshots/hive-query-results.png)
 
