@@ -1,3 +1,4 @@
+-- I first created a new table with all of the same headings as the original csv.
 CREATE TABLE performance (
 `student_id` INT,
 `age` INT,
@@ -19,3 +20,6 @@ ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 tblproperties("skip.header.line.count"="1");
+
+-- I then loaded the data from the csv saved in HDFS into the table.
+LOAD DATA INPATH '/studentData/STUDENT_PERFORMANCE.csv' INTO TABLE performance;
