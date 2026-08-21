@@ -28,8 +28,8 @@ Complete this checklist before submitting your repository URL.
 
 ## Objective 3 — Environment Setup
 
-- [ ] `docs/screenshots/package-installation.png` shows the required package installation.
-- [ ] `docs/screenshots/hbase-thrift-server.png` shows the HBase Thrift server running.
+- [x] `docs/screenshots/package-installation.png` shows the required package installation.
+- [x] `docs/screenshots/hbase-thrift-server.png` shows the HBase Thrift server running.
 - [ ] `docs/project-summary.md` explains why the packages and Thrift server are required.
 
 ## Objective 4 — HBase Table Creation
