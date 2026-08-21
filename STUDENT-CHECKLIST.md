@@ -34,9 +34,9 @@ Complete this checklist before submitting your repository URL.
 
 ## Objective 4 — HBase Table Creation
 
-- [ ] `hbase/commands.txt` contains my HBase table-creation commands.
-- [ ] `hbase/README.md` explains my row key and column-family design.
-- [ ] `hbase/screenshots/hbase-empty-scan.png` shows the empty table before Spark writes metrics.
+- [x] `hbase/commands.txt` contains my HBase table-creation commands.
+- [x] `hbase/README.md` explains my row key and column-family design.
+- [x] `hbase/screenshots/hbase-empty-scan.png` shows the empty table before Spark writes metrics.
 
 ## Objective 5 — PySpark MLlib
 
