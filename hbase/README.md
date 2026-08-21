@@ -8,11 +8,12 @@ The HBase table is created before the Spark job runs, verified with an empty sca
 
 ## Table Design
 
-**Table name:** `[Enter HBase table name]`  
-**Row key:** `[Describe the row key]`  
-**Column family/families:** `[Enter column family names]`
+**Table name:** `Models`  
+**Row key:** `For the row key we will use a counter that increases by one each time a model is trained and tested.`  
+**Column family/families:** `model_type and metrics`
 
-Explain why the selected row key and column family design are appropriate for the model metrics being stored.
+Because I am not actually running this program on a very large dataset on a distributed system, I felt that a simple row key that just increments by 1 each time a new model is trained would be appropriate in this case.
+For column families, I created one family that just stores the type of model that is being trained and evaluated, and a second family that stores the metrics about how well that model did at predicting values.
 
 ## HBase Commands
 
