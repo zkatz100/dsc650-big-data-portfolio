@@ -4,39 +4,39 @@ Complete this checklist before submitting your repository URL.
 
 ## Repository
 
-- [ ] My final project is in a repository under my own GitHub account.
-- [ ] I did not submit changes or a pull request to the instructor's starter repository.
-- [ ] The instructor can access my repository.
-- [ ] I kept the required folder structure.
+- [x] My final project is in a repository under my own GitHub account.
+- [x] I did not submit changes or a pull request to the instructor's starter repository.
+- [x] The instructor can access my repository.
+- [x] I kept the required folder structure.
 - [ ] The root `README.md` renders correctly.
 
 ## Objective 1 — NiFi → HDFS
 
-- [ ] `nifi/flow-definition.json` contains my final NiFi flow.
-- [ ] `nifi/README.md` explains the data source, processors, processor roles, and HDFS destination.
-- [ ] `nifi/screenshots/nifi-flow.png` shows my final flow design.
-- [ ] `nifi/screenshots/nifi-running.png` shows the flow running with data visible in queues.
-- [ ] `nifi/screenshots/hdfs-ingestion-verification.png` shows `hdfs dfs -ls` confirming ingestion.
+- [x] `nifi/flow-definition.json` contains my final NiFi flow.
+- [x] `nifi/README.md` explains the data source, processors, processor roles, and HDFS destination.
+- [x] `nifi/screenshots/nifi-flow.png` shows my final flow design.
+- [x] `nifi/screenshots/nifi-running.png` shows the flow running with data visible in queues.
+- [x] `nifi/screenshots/hdfs-ingestion-verification.png` shows `hdfs dfs -ls` confirming ingestion.
 
 ## Objective 2 — Hive
 
-- [ ] `hive/create_tables.sql` contains my table creation / load SQL.
-- [ ] `hive/queries.sql` contains my representative validation and aggregation queries.
-- [ ] `hive/README.md` explains my schema design and what the queries demonstrate.
-- [ ] `hive/screenshots/hive-load-results.png` shows successful loading.
-- [ ] `hive/screenshots/hive-query-results.png` shows query and aggregation results.
+- [x] `hive/create_tables.sql` contains my table creation / load SQL.
+- [x] `hive/queries.sql` contains my representative validation and aggregation queries.
+- [x] `hive/README.md` explains my schema design and what the queries demonstrate.
+- [x] `hive/screenshots/hive-load-results.png` shows successful loading.
+- [x] `hive/screenshots/hive-query-results.png` shows query and aggregation results.
 
 ## Objective 3 — Environment Setup
 
-- [ ] `docs/screenshots/package-installation.png` shows the required package installation.
-- [ ] `docs/screenshots/hbase-thrift-server.png` shows the HBase Thrift server running.
+- [x] `docs/screenshots/package-installation.png` shows the required package installation.
+- [x] `docs/screenshots/hbase-thrift-server.png` shows the HBase Thrift server running.
 - [ ] `docs/project-summary.md` explains why the packages and Thrift server are required.
 
 ## Objective 4 — HBase Table Creation
 
-- [ ] `hbase/commands.txt` contains my HBase table-creation commands.
-- [ ] `hbase/README.md` explains my row key and column-family design.
-- [ ] `hbase/screenshots/hbase-empty-scan.png` shows the empty table before Spark writes metrics.
+- [x] `hbase/commands.txt` contains my HBase table-creation commands.
+- [x] `hbase/README.md` explains my row key and column-family design.
+- [x] `hbase/screenshots/hbase-empty-scan.png` shows the empty table before Spark writes metrics.
 
 ## Objective 5 — PySpark MLlib
 

@@ -6,9 +6,9 @@ Apache NiFi provides the ingestion and orchestration layer for this project. The
 
 ## Source Dataset
 
-**Dataset:** Student_Performance.csv  
-**GitHub direct URL:** https://raw.githubusercontent.com/zkatz100/DSC_650_Katz/refs/heads/main/Student_Performance.csv
-Originally sourced from Kaggle, this dataset contains some student demographic data along with data about study habits and scores in math, English, and science classes.
+**Dataset:** home temps.csv  
+**GitHub direct URL:** https://raw.githubusercontent.com/zkatz100/dsc650-big-data-portfolio/refs/heads/main/sample-data/Home_Temps.csv
+This data is sourced from the Home Assistant server running in my house, it contains a timestamp, outdoor temperature and humidity, and 3 readings of indoor temperature and humidity from different rooms in my house.
 
 ## Flow Design
 
@@ -22,7 +22,7 @@ Originally sourced from Kaggle, this dataset contains some student demographic d
 
 ## HDFS Destination
 
-**HDFS path:** `/studentData`
+**HDFS path:** `/home_data/home_temps.csv`
 
 The NiFi flow saved the data as a csv file in the HDFS file system. Later in this project, Hive, HBase, and Spark will be able to access the data saved in that directory.
 
