@@ -10,9 +10,9 @@ import happybase
 spark = SparkSession.builder.appName('Predict_Temp').enableHiveSupport().getOrCreate()
 
 # import the Hive table into Spark
-home_data = spark.read.table('Home_temps')
+home_data = spark.read.table('home_temps')
 
-# convert all the numeric columns to floats
+# define which columns are features and which one is the target.
 feature_columns = ['dining_temp',
                    'dining_hum',
                    'bedroom_temp',
@@ -28,6 +28,7 @@ train_df, test_df = home_data.randomSplit([0.8,0.2], seed = 19)
 # Define the pipeline stages
 vector_assembler = VectorAssembler(inputCols = feature_columns,
                                    outputCol = "raw_features")
+# Because the humidity and temperatures are on different scales we use standard scaler on all the data.
 scaler = StandardScaler(inputCol = "raw_features",
                         outputCol = "scaled_features",
                         withStd = True,
