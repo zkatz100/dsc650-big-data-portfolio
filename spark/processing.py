@@ -20,6 +20,9 @@ feature_columns = ['dining_temp',
                    ]
 target_column = 'outdoor_temp'
 
+# remove any rows with null values
+clean_home_data = home_data.dropna(subset = feature_columns + [target_column])
+
 # split into training and test data.
 train_df, test_df = home_data.randomSplit([0.8,0.2], seed = 19)
 
