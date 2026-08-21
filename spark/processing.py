@@ -4,8 +4,6 @@ from pyspark.ml import Pipeline
 from pyspark.ml.feature import VectorAssembler, StandardScaler
 from pyspark.ml.evaluation import RegressionEvaluator
 
-import happybase
-
 # start Spark
 spark = SparkSession.builder.appName('Predict_Temp').enableHiveSupport().getOrCreate()
 
@@ -47,19 +45,21 @@ predictions = pipeline_model.transform(test_df)
 
 
 # calculate evaluation metrics for the model
-rmse_evaluator = RegressionEvaluator(labelCol = 'label', predictionCol = 'prediction', metricName = 'rmse')
-r2_evaluator = RegressionEvaluator(labelCol = 'label', predictionCol = 'prediction', metricName = 'r2')
+rmse_evaluator = RegressionEvaluator(labelCol = 'target_column', predictionCol = 'prediction', metricName = 'rmse')
+r2_evaluator = RegressionEvaluator(labelCol = 'target_column', predictionCol = 'prediction', metricName = 'r2')
 
 
 rmse_value = rmse_evaluator.evaluate(predictions)
 r2_value = r2_evaluator.evaluate(predictions)
 
+import happybase
+
 # Connect to HBase using Happybase
 connection = happybase.Connection('hbase-thrift-host')
 table = connection.table('Models')
 
-table.put(1,{
-    'model_type': 'linear_regression',
+table.put('1',{
+    'model_type:model_type': 'linear_regression',
     'metrics:accuracy': str(rmse_value),
     'metrics:f1_score': str(r2_value)
 })
