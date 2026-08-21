@@ -29,15 +29,11 @@ The empty scan shows that the table was created properly, if the table was not c
 
 ## Metrics Written by Spark
 
-List the model-performance metrics written into HBase.
-
-Examples may include accuracy, precision, recall, F1 score, RMSE, MAE, or another metric appropriate for the selected MLlib algorithm.
-
-Explain how these values represent the output of the Spark machine learning workflow.
+The metrics Spark wrote into HBase are RMSE and r2. These two values describe how well the predictions made by the regression model compare to the actual values in the original dataset.
 
 ## Populated Table Verification
 
-Explain how the final populated scan confirms that Spark successfully wrote the model metrics into HBase.
+The screenshot shows that the model type (linear regression) as well as the two evaluation metrics from that model were recorded into HBase. This gives us a convenient place to store these metrics if we want to train and compare multiple models instead of needing to search through the YARN logs to find them.
 
 ![Populated HBase Scan](screenshots/hbase-populated-scan.png)
 
