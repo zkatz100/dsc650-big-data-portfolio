@@ -58,7 +58,7 @@ r2_value = r2_evaluator.evaluate(predictions)
 import happybase
 
 # Connect to HBase using Happybase
-connection = happybase.Connection('hbase-thrift-host')
+connection = happybase.Connection('master', port=9090)
 table = connection.table('Models')
 
 table.put(b'1',{
