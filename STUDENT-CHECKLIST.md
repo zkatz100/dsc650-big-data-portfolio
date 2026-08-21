@@ -4,27 +4,27 @@ Complete this checklist before submitting your repository URL.
 
 ## Repository
 
-- [y] My final project is in a repository under my own GitHub account.
-- [y] I did not submit changes or a pull request to the instructor's starter repository.
-- [y] The instructor can access my repository.
-- [y] I kept the required folder structure.
+- [x] My final project is in a repository under my own GitHub account.
+- [x] I did not submit changes or a pull request to the instructor's starter repository.
+- [x] The instructor can access my repository.
+- [x] I kept the required folder structure.
 - [ ] The root `README.md` renders correctly.
 
 ## Objective 1 — NiFi → HDFS
 
-- [ ] `nifi/flow-definition.json` contains my final NiFi flow.
-- [ ] `nifi/README.md` explains the data source, processors, processor roles, and HDFS destination.
-- [ ] `nifi/screenshots/nifi-flow.png` shows my final flow design.
-- [ ] `nifi/screenshots/nifi-running.png` shows the flow running with data visible in queues.
-- [ ] `nifi/screenshots/hdfs-ingestion-verification.png` shows `hdfs dfs -ls` confirming ingestion.
+- [x] `nifi/flow-definition.json` contains my final NiFi flow.
+- [x] `nifi/README.md` explains the data source, processors, processor roles, and HDFS destination.
+- [x] `nifi/screenshots/nifi-flow.png` shows my final flow design.
+- [x] `nifi/screenshots/nifi-running.png` shows the flow running with data visible in queues.
+- [x] `nifi/screenshots/hdfs-ingestion-verification.png` shows `hdfs dfs -ls` confirming ingestion.
 
 ## Objective 2 — Hive
 
-- [ ] `hive/create_tables.sql` contains my table creation / load SQL.
-- [ ] `hive/queries.sql` contains my representative validation and aggregation queries.
-- [ ] `hive/README.md` explains my schema design and what the queries demonstrate.
-- [ ] `hive/screenshots/hive-load-results.png` shows successful loading.
-- [ ] `hive/screenshots/hive-query-results.png` shows query and aggregation results.
+- [x] `hive/create_tables.sql` contains my table creation / load SQL.
+- [x] `hive/queries.sql` contains my representative validation and aggregation queries.
+- [x] `hive/README.md` explains my schema design and what the queries demonstrate.
+- [x] `hive/screenshots/hive-load-results.png` shows successful loading.
+- [x] `hive/screenshots/hive-query-results.png` shows query and aggregation results.
 
 ## Objective 3 — Environment Setup
 
