@@ -7,8 +7,8 @@ Apache NiFi provides the ingestion and orchestration layer for this project. The
 ## Source Dataset
 
 **Dataset:** home temps.csv  
-**GitHub direct URL:** https://raw.githubusercontent.com/zkatz100/dsc650-big-data-portfolio/refs/heads/main/sample-data/Home_20Temps.csv
-Originally sourced from Kaggle, this dataset contains some student demographic data along with data about study habits and scores in math, English, and science classes.
+**GitHub direct URL:** https://raw.githubusercontent.com/zkatz100/dsc650-big-data-portfolio/refs/heads/main/sample-data/Home_Temps.csv
+This data is sourced from the Home Assistant server running in my house, it contains a timestamp, outdoor temperature and humidity, and 3 readings of indoor temperature and humidity from different rooms in my house.
 
 ## Flow Design
 
