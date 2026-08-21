@@ -24,7 +24,7 @@ target_column = 'outdoor_temp'
 clean_home_data = home_data.dropna(subset = feature_columns + [target_column])
 
 # split into training and test data.
-train_df, test_df = home_data.randomSplit([0.8,0.2], seed = 19)
+train_df, test_df = clean_home_data.randomSplit([0.8,0.2], seed = 19)
 
 # Define the pipeline stages
 vector_assembler = VectorAssembler(inputCols = feature_columns,
