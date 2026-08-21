@@ -63,8 +63,8 @@ table = connection.table('Models')
 
 table.put(b'1',{
     'model_type:model_type': 'linear_regression',
-    'metrics:accuracy': str(rmse_value),
-    'metrics:f1_score': str(r2_value)
+    'metrics:RMSE': str(rmse_value),
+    'metrics:r2': str(r2_value)
 })
 
 print("Metrics written to HBase.")
