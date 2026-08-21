@@ -7,7 +7,7 @@ CREATE TABLE home_temps (
 `bathroom_temp` DOUBLE,
 `bathroom_hum` DOUBLE,
 `bedroom_temp` DOUBLE,
-`bedroom_hum` DOUBLE,)
+`bedroom_hum` DOUBLE)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
