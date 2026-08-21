@@ -45,8 +45,8 @@ predictions = pipeline_model.transform(test_df)
 
 
 # calculate evaluation metrics for the model
-rmse_evaluator = RegressionEvaluator(labelCol = 'target_column', predictionCol = 'prediction', metricName = 'rmse')
-r2_evaluator = RegressionEvaluator(labelCol = 'target_column', predictionCol = 'prediction', metricName = 'r2')
+rmse_evaluator = RegressionEvaluator(labelCol = target_column, predictionCol = 'prediction', metricName = 'rmse')
+r2_evaluator = RegressionEvaluator(labelCol = target_column, predictionCol = 'prediction', metricName = 'r2')
 
 
 rmse_value = rmse_evaluator.evaluate(predictions)
@@ -58,7 +58,7 @@ import happybase
 connection = happybase.Connection('hbase-thrift-host')
 table = connection.table('Models')
 
-table.put('1',{
+table.put(b'1',{
     'model_type:model_type': 'linear_regression',
     'metrics:accuracy': str(rmse_value),
     'metrics:f1_score': str(r2_value)
