@@ -14,4 +14,4 @@ STORED AS TEXTFILE
 tblproperties("skip.header.line.count"="1");
 
 -- I then loaded the data from the csv saved in HDFS into the table.
-LOAD DATA INPATH '/home_data/home_data.csv' INTO TABLE home_temps;
+LOAD DATA INPATH '/home_data/home_temps.csv' INTO TABLE home_temps;
