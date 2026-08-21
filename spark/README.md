@@ -6,40 +6,40 @@ Apache Spark MLlib provides the distributed processing and machine learning laye
 
 ## Hive Input
 
-**Hive table:** `[Enter Hive table name]`
+**Hive table:** `home_temps`
 
-Explain what data Spark reads from Hive and which fields are used by the machine learning workflow.
+Spark will read the table of indoor and outdoor temperatures. To train the model, Spark will use the indoor temperatures and humidity in the three rooms to try to predict the outdoor humidity.
 
 ## Data Preparation & Transformations
 
-Describe the important preprocessing or transformation steps performed before model training.
+For this project, I am looking for a relationship between indoor temperature and humidity with outdoor temperature.
+When selecting features, I already know that there is a relationship between time and outdoor temperature, as well as between outdoor temperature and humidity. I therefore excluded these two columns from the training data.
 
-Examples may include:
-
-- selecting relevant features;
-- handling missing values;
-- encoding categorical fields;
-- assembling feature vectors;
-- scaling or normalization;
-- creating training and test datasets.
+All of my data was numeric, so I did not need to worry about encoding it. However, temperature and humidity are recorded on different scales, so i applied a standard scaler to all of the training and test data before applying the model. I also told the model to ignore any missing values,
 
 ## MLlib Algorithm
 
-**Algorithm:** `[Enter algorithm]`
+**Algorithm:** `Linear regression`
 
-Explain:
-
-- why this algorithm was appropriate for the selected dataset;
-- what prediction or modeling task it performs;
-- which features and target/label are used.
+I chose linear regression because I am looking for a relationship between numeric indoor temperature and humidity values and the numeric outdoor temperature value.
+For my target variable, I used outdoor_temp.
+My feature variables were dining_temp, dining_hum, bathroom_temp, bathroom_hum, bedroom_temp, and bathroom_hum.
 
 ## Training & Evaluation
 
-Summarize the training process and explain the evaluation metric or metrics used.
+To train the model, I first read the Hive table into a Spark Dataframe and defined which columns would be features and the target. I then split the data into an 80% training set and a 20% test set.
+I defined a pipeline with three stages to train the model:
+First, I assembled the 6 feature columns into a single vector.
+Second, I applied a standard scaler to those feature vectors.
+Third, I sent the features into the regresion model to train it.
 
-**Primary evaluation metric(s):** `[Enter metric(s)]`
+I applied the same pipeline to transform the features of the test set in order to evaluate the model.
 
-Explain what the resulting values indicate about model performance.
+**Primary evaluation metric(s):** `RMSE and r squared`
+My model produced an RMSE of 9.65, meaning the average distance between predicted and real temperature is about 10 degrees.
+the r squared value is 0.44, meaning 44% percent of variability in the outdoor temperature can be explained by variation in indoor temperature and humidity.
+
+Overall, these two metrics show that the model is not very good at predicting close to the true outdoor temperature.
 
 ### Training Output
 
@@ -54,7 +54,11 @@ Explain what the resulting values indicate about model performance.
 Document the exact `spark-submit` command used to submit the PySpark application through YARN.
 
 ```bash
-# Paste your spark-submit command here
+spark-submit \
+--master yarn \
+--deploy-mode cluster \
+--name Predict_Temp \
+processing.py
 ```
 
 Briefly describe the successful execution and any important log or output information.
@@ -65,4 +69,4 @@ Briefly describe the successful execution and any important log or output inform
 
 List the model-performance metrics written by Spark into HBase and explain how the application connects the machine learning stage to the final persistence layer.
 
-**PySpark source files:** [`processing.py`](processing.py) and/or [`analysis.py`](analysis.py)
+**PySpark source files:** [`processing.py`](processing.py)
