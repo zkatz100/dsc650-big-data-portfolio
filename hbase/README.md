@@ -23,7 +23,7 @@ The commands used to create and inspect the table are stored in:
 
 ## Empty Table Verification
 
-Explain how the initial empty scan confirms that the target table exists before Spark writes any metrics.
+The empty scan shows that the table was created properly, if the table was not created the, scan would return "unknown table".
 
 ![Empty HBase Scan](screenshots/hbase-empty-scan.png)
 
